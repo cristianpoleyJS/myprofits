@@ -1,6 +1,6 @@
 import { Formik, Form, ErrorMessage } from 'formik'
-import { TextInput } from '../common/TextInput'
-import { Stock } from '../../classes/Stock'
+import { TextInput } from 'components/common/TextInput'
+import { Stock } from 'classes/Stock'
 import { validateCommonFields, checkIsNumber } from './utils'
 
 const validate = (values) => {
@@ -16,7 +16,7 @@ const validate = (values) => {
   return errors
 }
   
-export const FormStock = () => {
+const FormStock = () => {
   const initialValues = new Stock({ ticket: '', price: 0, moneyInvested: 0, numStocks: 0 })
     return (
         <Formik
@@ -38,3 +38,5 @@ export const FormStock = () => {
         </Formik>
     )
 }
+
+export default FormStock

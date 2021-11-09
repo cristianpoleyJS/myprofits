@@ -1,6 +1,6 @@
 import { Formik, Form, ErrorMessage } from 'formik'
-import { TextInput } from '../common/TextInput'
-import { Crypto } from '../../classes/Crypto'
+import { TextInput } from 'components/common/TextInput'
+import { Crypto } from 'classes/Crypto'
 import { validateCommonFields, checkIsNumber } from './utils'
 
 const validate = (values) => {
@@ -16,7 +16,7 @@ const validate = (values) => {
   return errors
 }
   
-export const FormCrypto = () => {
+const FormCrypto = () => {
   const initialValues = new Crypto({ ticket: '', price: 0, moneyInvested: 0, numCoins: 0 })
     return (
         <Formik
@@ -38,3 +38,5 @@ export const FormCrypto = () => {
         </Formik>
     )
 }
+
+export default FormCrypto
