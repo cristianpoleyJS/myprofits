@@ -1,4 +1,4 @@
-import AppLayout from './components/AppLayout'
+import AppLayout from './components/layout/AppLayout'
 import 'assets/styles/App.css'
 
 function App() {

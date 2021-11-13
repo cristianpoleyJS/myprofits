@@ -1,10 +1,12 @@
-const SET_LANGAUGE = 'SET_LANGAUGE'
-const SET_CURRENCY = 'SET_CURRENCY'
-const SET_THEME = 'SET_THEME'
+import { CURRENCY_EUR } from 'utils/constants'
+
+const SET_LANGAUGE = 'config/set_language'
+const SET_CURRENCY = 'config/set_currency'
+const SET_THEME = 'config/set_theme'
 
 const initialState = {
     language: navigator.language,
-    currency: 'EUR',
+    currency: CURRENCY_EUR,
     theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
@@ -24,10 +26,9 @@ const reducers = {
 }
 
 const configReducer = (state = initialState, action) => {
-    if (reducers[action.type]) {
-        return reducers[action.type](state, action.payload)
-    }
-    return state
+  return reducers[action.type]
+    ? reducers[action.type](state, action.payload)
+    : state
 }
 
 export default configReducer

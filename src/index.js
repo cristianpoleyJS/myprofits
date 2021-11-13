@@ -6,6 +6,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import store from './store'
 
+import './api/firebase'
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

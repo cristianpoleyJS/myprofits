@@ -1,15 +1,18 @@
-import { createStore, combineReducers } from 'redux'
-import ticketsReducer from './storeTickets'
-import userReducer from './storeUser'
-import configReducer from './storeConfig'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-export const reducer = combineReducers({
-  tickets: ticketsReducer,
-  user: userReducer,
-  config: configReducer
-})
+import reducer from './reducers/rootReducer'
 
-let store = createStore(reducer)
+export const middleware = store => next => action => {
+  if (typeof action === 'function') {
+    return action(store.dispatch, store.getState)
+  }
+  return next(action)
+}
+
+let store = createStore(reducer, composeWithDevTools(
+  applyMiddleware(middleware)
+))
 
 // Guardar la lista de tickets de la base de datos
 // Guardar mi configuración de idioma

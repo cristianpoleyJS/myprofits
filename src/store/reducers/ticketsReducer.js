@@ -1,6 +1,6 @@
-const REMOVE_TICKET = 'REMOVE_TICKET'
-const EDIT_TICKET = 'EDIT_TICKET'
-const ADD_TICKET = 'ADD_TICKET'
+const REMOVE_TICKET = 'tickets/remove'
+const EDIT_TICKET = 'tickets/edit'
+const ADD_TICKET = 'tickets/add'
 
 const initialState = {
     tickets: new Map()
@@ -22,10 +22,9 @@ const reducers = {
 }
 
 const ticketsReducer = (state = initialState, action) => {
-    if (reducers[action.type]) {
-        return reducers[action.type](state, action.payload)
-    }
-    return state
-}
+    return reducers[action.type]
+      ? reducers[action.type](state, action.payload)
+      : state
+  }
 
 export default ticketsReducer
