@@ -1,5 +1,5 @@
 import { Formik, Form, ErrorMessage } from 'formik'
-import { TextInput } from 'components/common/TextInput'
+import TextInput from 'components/common/TextInput'
 import { Crypto } from 'classes/Crypto'
 import { validateCommonFields, checkIsNumber } from './utils'
 

@@ -1,25 +1,29 @@
-export const CHANGE_IS_LOGGED = 'auth/change_isLogged'
-export const LOGIN_SUCCESS = 'auth/login_success'
-export const LOGIN_ERROR = 'auth/login_error'
+import { LOGIN_SUCCESS, LOGIN_ERROR, IS_LOGGED } from 'store/actions/authActions'
 
 const initialState = {
-  user: new Map(),
+  user: null,
   error: null,
   isLogged: false
 }
 
 const reducers = {
-    [`${CHANGE_IS_LOGGED}`]: (state) => {
-      state.isLogged = !state.isLogged 
-      return state
+    [`${IS_LOGGED}`]: (state) => {
+      return {
+        ...state,
+        isLogged: !state.isLogged
+      }
     },
-    [`${LOGIN_SUCCESS}`]: (state, { user }) => {
-      state.user = user
-      return state
+    [`${LOGIN_SUCCESS}`]: (state, user) => {
+      return {
+        ...state,
+        user: user
+      }
     },
-    [`${LOGIN_ERROR}`]: (state, { error }) => {
-      state.error = error
-      return state
+    [`${LOGIN_ERROR}`]: (state, error) => {
+      return {
+        ...state,
+        error: error
+      }
     },
 }
 

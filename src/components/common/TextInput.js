@@ -1,6 +1,6 @@
 import { useField } from 'formik'
 
-export const TextInput = ({ label, ...props }) => {
+const TextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props)
 
   return (
@@ -11,3 +11,5 @@ export const TextInput = ({ label, ...props }) => {
     </div>
   )
 }
+
+export default TextInput
