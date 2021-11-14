@@ -1,7 +1,7 @@
 import { Formik, Form, ErrorMessage } from 'formik'
 import TextInput from 'components/common/TextInput'
 import { Crypto } from 'classes/Crypto'
-import { validateCommonFields, checkIsNumber } from './utils'
+import { validateCommonFields, checkIsNumber } from './validations'
 
 const validate = (values) => {
   let errors = {}

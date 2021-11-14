@@ -7,10 +7,10 @@ const initialState = {
 }
 
 const reducers = {
-    [`${IS_LOGGED}`]: (state) => {
+    [`${IS_LOGGED}`]: (state, value) => {
       return {
         ...state,
-        isLogged: !state.isLogged
+        isLogged: value
       }
     },
     [`${LOGIN_SUCCESS}`]: (state, user) => {

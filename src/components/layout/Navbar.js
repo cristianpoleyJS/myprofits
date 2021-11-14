@@ -1,37 +1,21 @@
-import { useEffect } from 'react'
-import { connect, useDispatch } from 'react-redux'
-import { onAuthStateChanged, loginWithGoogle, LOGIN_SUCCESS, IS_LOGGED, logout } from 'store/actions/authActions'
+import { connect } from 'react-redux'
+import Avatar from 'components/common/Avatar'
+import 'assets/styles/Navbar.css'
+import Logout from 'components/auth/Logout'
+import Login from 'components/auth/Login'
 
 const Navbar = ({ user, isLogged }) => {
-    const dispatch = useDispatch()
-    
-    useEffect(() => {
-        onAuthStateChanged((userChanged) => {
-            dispatch({ type: LOGIN_SUCCESS, payload: userChanged })
-            dispatch({ type: IS_LOGGED })
-        })
-    }, [dispatch])
-    
-    const handleLoginWithGoogle = () => {
-        loginWithGoogle()
-    }
-
-    const handleLogout = () => {
-        logout()
-            .then(() => {
-                dispatch({ type: IS_LOGGED })
-                dispatch({ type: LOGIN_SUCCESS, payload: null })
-            })
-    }
     return (
         <header>
-            Header App
+            <span>MyProfits</span>
             {
                 !isLogged ?
-                    <div>
-                        <button onClick={() => handleLoginWithGoogle()}>Log in with Google</button>
-                    </div>
-                : <button onClick={() => handleLogout()}><img src={user.photoUrl} alt="avatar user" /> Logout</button>
+                    <Login />
+                :
+                <div className="navbar-right">
+                    <Logout />
+                    <Avatar photo={user.photoUrl} height={'40px'} width={'40px'}/>
+                </div>
             }
         </header>
     )

@@ -8,19 +8,19 @@ export const validateCommonFields = ({ errors, values }) => {
   
     if(!values.price || values.price <= 0) {
       errors.price = 'Requerido'
-    } else if (checkIsNumber(values.price)) {
+    } else if (!checkIsNumber(values.price)) {
       errors.price = 'Debe ser un número'
     }
 
     if(!values.moneyInvested || values.moneyInvested <= 0) {
       errors.moneyInvested = 'Requerido'
-    } else if (checkIsNumber(values.moneyInvested)) {
+    } else if (!checkIsNumber(values.moneyInvested)) {
       errors.moneyInvested = 'Debe ser un número'
     }
 
     if(!values.numStocks || values.numStocks <= 0) {
       errors.numStocks = 'Requerido'
-    } else if (checkIsNumber(values.numStocks)) {
+    } else if (!checkIsNumber(values.numStocks)) {
       errors.numStocks = 'Debe ser un número'
     }
   
@@ -28,5 +28,5 @@ export const validateCommonFields = ({ errors, values }) => {
   }
 
 export const checkIsNumber = (value) => {
-    return !Number.isNaN(Number(value))
+  return !Number.isNaN(Number(value))
 }

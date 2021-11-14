@@ -5,7 +5,7 @@ export const IS_LOGGED = 'auth/change_isLogged'
 export const LOGIN_SUCCESS = 'auth/login_success'
 export const LOGIN_ERROR = 'auth/login_error'
 
-export const mapUserFromFirebaseToUser = (user) => {
+export const mapUserFromFirebase = (user) => {
     return {
         name: user.displayName,
         email: user.email,
@@ -18,7 +18,7 @@ export const onAuthStateChanged = (onChange) => {
             .auth()
             .onAuthStateChanged(user => {
                 if (user) {
-                    const normalizedUser = mapUserFromFirebaseToUser(user)
+                    const normalizedUser = mapUserFromFirebase(user)
                     onChange(normalizedUser)
                 }
             })
@@ -29,7 +29,7 @@ export const loginWithGoogle = () => {
     return firebase
         .auth()
         .signInWithPopup(googleProvider)
-        .then(mapUserFromFirebaseToUser)
+        .then(mapUserFromFirebase)
 }
 
 export const logout = () => {
