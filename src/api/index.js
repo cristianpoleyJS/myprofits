@@ -7,6 +7,13 @@ export const getListTicketsFromFirestore = ({ userEmail }) => {
         .get()
 }
 
+export const getListCryptosFromFirestore = ({ userEmail }) => {
+    return database
+        .collection(`/namespaces/${userEmail}/cryptos`)
+        .orderBy('createdAt', 'desc')
+        .get()
+}
+
 export const addStock = ({stock, userEmail}) => {
     return database.collection(`/namespaces/${userEmail}/tickets`).add({
         ...stock,
