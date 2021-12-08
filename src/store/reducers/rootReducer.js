@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
-import ticketsReducer from './ticketsReducer'
+import portfolioReducer from './portfolioReducer'
 import authReducer from './authReducer'
 import configReducer from './configReducer'
 
 const reducer = combineReducers({
-  tickets: ticketsReducer,
+  portfolio: portfolioReducer,
   auth: authReducer,
   config: configReducer
 })

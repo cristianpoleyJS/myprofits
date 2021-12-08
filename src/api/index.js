@@ -1,8 +1,8 @@
 import { database } from '../firebase'
 
-export const getListTicketsFromFirestore = ({ userEmail }) => {
+export const getListStocksFromFirestore = ({ userEmail }) => {
     return database
-        .collection(`/namespaces/${userEmail}/tickets`)
+        .collection(`/namespaces/${userEmail}/stocks`)
         .orderBy('createdAt', 'desc')
         .get()
 }
@@ -15,7 +15,7 @@ export const getListCryptosFromFirestore = ({ userEmail }) => {
 }
 
 export const addStock = ({stock, userEmail}) => {
-    return database.collection(`/namespaces/${userEmail}/tickets`).add({
+    return database.collection(`/namespaces/${userEmail}/stocks`).add({
         ...stock,
         type: 'stock',
         createdAt: new Date()
@@ -23,7 +23,7 @@ export const addStock = ({stock, userEmail}) => {
 }
 
 export const addCrypto = ({crypto, userEmail}) => {
-    return database.collection(`/namespaces/${userEmail}/tickets`).add({
+    return database.collection(`/namespaces/${userEmail}/cryptos`).add({
         ...crypto,
         type: 'crypto',
         createdAt: new Date()
@@ -31,6 +31,6 @@ export const addCrypto = ({crypto, userEmail}) => {
 }
 
 
-export const deleteTicket = ({ id, userEmail }) => {
-    return database.collection(`/namespaces/${userEmail}/tickets`).doc(id).delete()
+export const deleteStock = ({ id, userEmail }) => {
+    return database.collection(`/namespaces/${userEmail}/stocks`).doc(id).delete()
 }

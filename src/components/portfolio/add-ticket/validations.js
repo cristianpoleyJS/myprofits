@@ -17,13 +17,6 @@ export const validateCommonFields = ({ errors, values }) => {
     } else if (!checkIsNumber(values.moneyInvested)) {
       errors.moneyInvested = 'Debe ser un número'
     }
-
-    if(!values.numStocks || values.numStocks <= 0) {
-      errors.numStocks = 'Requerido'
-    } else if (!checkIsNumber(values.numStocks)) {
-      errors.numStocks = 'Debe ser un número'
-    }
-  
     return errors
   }
 

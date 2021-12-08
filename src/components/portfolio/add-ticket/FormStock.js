@@ -23,25 +23,25 @@ const FormStock = ({ email }) => {
   }
 
   const initialValues = new Stock({ ticket: '', price: 0, moneyInvested: 0, numStocks: 0 })
-    return (
-        <Formik
-          initialValues={initialValues}
-          validate={validate}
-          onSubmit={values => handleSubmitStock(values)}>
-          <Form>
-            <TextInput name="ticket" label="Ticket" />
-            <br />
-            <TextInput name="price" label="Price" />
-            <br />
-            <TextInput name="moneyInvested" label="Money invested" />
-            <br />
-            <TextInput name="numStocks" label="Number of stocks" />
-            <br />
-            <ErrorMessage name="radio" />
-            <button type="submit">Create</button>
-          </Form>
-        </Formik>
-    )
+  return (
+    <Formik
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={values => handleSubmitStock(values)}>
+      <Form>
+        <TextInput name="ticket" label="Stock" />
+        <br />
+        <TextInput name="price" label="Price" />
+        <br />
+        <TextInput name="moneyInvested" label="Money invested" />
+        <br />
+        <TextInput name="numStocks" label="Number of stocks" />
+        <br />
+        <ErrorMessage name="radio" />
+        <button type="submit">Create Stock</button>
+      </Form>
+    </Formik>
+  )
 }
 
 export default FormStock

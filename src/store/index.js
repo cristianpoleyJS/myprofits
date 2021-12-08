@@ -14,9 +14,4 @@ let store = createStore(reducer, composeWithDevTools(
   applyMiddleware(middleware)
 ))
 
-// Guardar la lista de tickets de la base de datos
-// Guardar mi configuración de idioma
-// Guardar mi configuración de tema
-// Guardar usuario
-
 export default store
