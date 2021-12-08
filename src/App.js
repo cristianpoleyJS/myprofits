@@ -1,15 +1,10 @@
-import logo from './assets/images/logo.svg'
-import './assets/styles/App.css'
+import AppLayout from './components/layout/AppLayout'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <AppLayout />
+      <div id="modal-root" />
     </div>
   )
 }
