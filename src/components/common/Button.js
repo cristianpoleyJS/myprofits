@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 const Button = styled.button`
-    background-color: ${props => props.primary ? 'red' : 'yellow'};
-    color: ${props => props.primary ? 'white' : 'black'};
-    padding: 10px 16px;
-    border: 2px solid black;
-    border-radius: 3px;
+    background-color: ${props => props.bgColor ?? '#495bee'};
+    color: ${props => props.color ?? '#fff'};
+    padding: ${props => props.padding ?? '14px 1rem'};
+    border: ${props => props.border ?? 'transparent'};
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: ${props => props.textTransform ?? 'capitalize'};
 `
 
 export default Button

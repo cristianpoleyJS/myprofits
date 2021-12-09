@@ -3,7 +3,7 @@ import { LOGIN_SUCCESS, LOGIN_ERROR, IS_LOGGED } from 'store/actions/authActions
 const initialState = {
   user: null,
   error: null,
-  isLogged: false
+  isLogged: null
 }
 
 const reducers = {

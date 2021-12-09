@@ -1,7 +1,6 @@
 import Ticket from 'components/portfolio/Ticket'
 
 const ListStocks = ({ stocks }) => {
-    console.log(stocks)
     return (
         <ul>
             {stocks.map(stock => 

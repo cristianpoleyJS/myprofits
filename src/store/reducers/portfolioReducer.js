@@ -1,4 +1,4 @@
-import { ADD_CRYPTO, ADD_STOCK, EDIT_STOCK, REMOVE_STOCK } from 'store/actions/portfolioActions'
+import { ADD_CRYPTO, ADD_STOCK, EDIT_STOCK, REMOVE_STOCK, CLEAN_PORTFOLIO } from 'store/actions/portfolioActions'
 
 const initialState = {
     stocks: [],
@@ -29,6 +29,12 @@ const reducers = {
     [`${REMOVE_STOCK}`]: (state, { id }) => {
         // state.portfolio.delete(id)
         return state
+    },
+    [`${CLEAN_PORTFOLIO}`]: (state) => {
+        return {
+            stocks: [],
+            cryptos: []
+        }
     }
 }
 

@@ -1,0 +1,19 @@
+header {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    align-items: center;
+    height: 60px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right__logged {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

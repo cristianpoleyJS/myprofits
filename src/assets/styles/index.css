@@ -1,3 +1,57 @@
+:root {
+  --white: #fff;
+  --bg-color-button: #495bee;
+}
+
+body.dark {
+  --main-text-color: #dceefe;
+  --second-text-color: #6d717d;
+  --main-bg-color: #11141c;
+  --second-bg-color: #21242c;
+  --border-color: #1e2029;
+}
+
+body.light {
+  --main-text-color: #000000;
+  --second-text-color: #cdd1d7;
+  --main-bg-color: #fff;
+  --second-bg-color: #f4f5f6;
+  --border-color: #1e2029;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, button,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +59,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg-color);
+  height: 100vh;
+  padding: 2rem 5rem;
+  color: var(--main-text-color);
+	line-height: 1;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar:horizontal {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  background-color: #bdbdbd;
+}
+
+*::-webkit-scrollbar-thumb:horizontal {
+  background: #bdbdbd;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* ::-webkit-scrollbar not compatible with Firefox https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar,
+so we can use this: */
+* {
+  scrollbar-color: #bdbdbd transparent;
 }
