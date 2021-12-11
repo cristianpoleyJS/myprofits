@@ -1,7 +1,7 @@
 export const validateCommonFields = ({ errors, values }) => {
 
-    if(!values.ticket) {
-      errors.ticket = ''
+    if(!values.ticker) {
+      errors.ticker = ''
     }
   
     if(!values.price || values.price <= 0) {

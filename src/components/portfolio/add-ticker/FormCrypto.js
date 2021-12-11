@@ -29,14 +29,14 @@ const FormCrypto = ({ email }) => {
     dispatch({ type: ADD_CRYPTO, payload: newCrypto })
   }
 
-  const initialValues = new Crypto({ ticket: '', price: 0, moneyInvested: 0, numCoins: 0 })
+  const initialValues = new Crypto({ ticker: '', price: 0, moneyInvested: 0, numCoins: 0 })
   return (
     <Formik
       initialValues={initialValues}
       validate={validate}
       onSubmit={values => handleSubmitCrypto(values)}>
       <Form>
-        <TextInput name="ticket" label="Crypto" placeholder="BTC" />
+        <TextInput name="ticker" label="Crypto" placeholder="BTC" />
         <br />
         <TextInput name="price" label="Price" />
         <br />

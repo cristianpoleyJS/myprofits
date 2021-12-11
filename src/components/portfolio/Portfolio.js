@@ -1,5 +1,5 @@
-import ListTickets from 'components/portfolio/ListTickets'
-import NavbarForms from 'components/portfolio/add-ticket/NavbarForms'
+import ListTickers from 'components/portfolio/ListTickers'
+import NavbarForms from 'components/portfolio/add-ticker/NavbarForms'
 import 'assets/styles/Portfolio.css'
 import { useSelector } from 'react-redux'
 
@@ -10,7 +10,7 @@ const Portfolio = () => {
     return (
         <section className="portfolio">
             <NavbarForms email={email}/>
-            <ListTickets />
+            <ListTickers />
         </section>
     )
 }

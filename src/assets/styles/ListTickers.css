@@ -1,47 +1,47 @@
-.list-tickets div {
+.list-tickers div {
     padding: 1rem 2rem;
 }
-.list-tickets div:nth-of-type(odd) {
+.list-tickers div:nth-of-type(odd) {
     background-color: var(--bg-odd-row);
 }
-.list-tickets div:nth-of-type(even) {
+.list-tickers div:nth-of-type(even) {
     background-color: var(--bg-even-row);
 }
 
-.list-tickets div:first-child {
+.list-tickers div:first-child {
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
-.list-tickets div:last-child {
+.list-tickers div:last-child {
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
-.list-tickets__header,
-.ticket {
+.list-tickers__header,
+.ticker {
     display: grid;
     gap: 18px;
     grid-template-columns: 5% 10% 10% 15% 10% 10% 15% 15%;
     text-align: right;
     align-items: center;
 }
-.list-tickets > div > span:nth-of-type(1) {
+.list-tickers > div > span:nth-of-type(1) {
     text-align: left;
     width: 40px;
 }
 
-.ticket {
+.ticker {
     font-weight: 300;
 }
 
-.ticket .positive {
+.ticker .positive {
     color: #16c784;
 }
-.ticket .negative {
+.ticker .negative {
     color: #ea3943;
 }
 
-.ticket .options {
+.ticker .options {
     display: flex;
     justify-content: right;
     gap: 1rem;

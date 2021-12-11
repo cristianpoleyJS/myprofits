@@ -1,9 +1,9 @@
-import { Ticket } from './Ticket'
+import { Ticker } from './Ticker'
 
-export class Stock extends Ticket {
+export class Stock extends Ticker {
 
-    constructor ({ ticket, price, moneyInvested, opened = false, numStocks }) {
-        super({ ticket, price, moneyInvested })
+    constructor ({ ticker, price, moneyInvested, opened = false, numStocks }) {
+        super({ ticker, price, moneyInvested })
         this.opened = opened
         this.numStocks = numStocks
     }

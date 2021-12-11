@@ -29,14 +29,14 @@ const FormStock = ({ email }) => {
     dispatch({ type: ADD_STOCK, payload: newStock })
   }
 
-  const initialValues = new Stock({ ticket: '', price: 0, moneyInvested: 0, numStocks: 0 })
+  const initialValues = new Stock({ ticker: '', price: 0, moneyInvested: 0, numStocks: 0 })
   return (
     <Formik
       initialValues={initialValues}
       validate={validate}
       onSubmit={values => handleSubmitStock(values)}>
       <Form>
-        <TextInput name="ticket" label="Stock" placeholder="BABA" />
+        <TextInput name="ticker" label="Stock" placeholder="BABA" />
         <br />
         <TextInput name="price" label="Price" />
         <br />

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import ListTotal from 'components/portfolio/ListTotal'
 import ListStocks from 'components/portfolio/ListStocks'
 import ListCryptos from 'components/portfolio/ListCryptos'
-import 'assets/styles/ListTickets.css'
+import 'assets/styles/ListTickers.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { ADD_STOCK, ADD_CRYPTO, getStocks, getCryptos } from '../../store/actions/portfolioActions'
 import { getCrypto, getStock } from 'api'
@@ -19,7 +19,7 @@ const Portfolio = () => {
             .all([getStocks(email), getCryptos(email)])
             .then(([ newStocks, newCryptos ]) => {
                 newStocks.docs.forEach(async (doc) => {
-                    const res = await getStock(doc.data().ticket)
+                    const res = await getStock(doc.data().ticker)
                     console.log(res)
                     dispatch({ type: ADD_STOCK, payload: {
                         ...doc.data(),
@@ -27,7 +27,7 @@ const Portfolio = () => {
                     } })
                 })
                 newCryptos.docs.forEach(async (doc) => {
-                    const res = await getCrypto(doc.data().ticket)
+                    const res = await getCrypto(doc.data().ticker)
                     console.log(res)
                     dispatch({ type: ADD_CRYPTO, payload: {
                         ...doc.data(),
@@ -38,11 +38,11 @@ const Portfolio = () => {
     }, [email, dispatch])
 
     return (
-        <section className="list-tickets">
-            <div className="list-tickets__header">
+        <section className="list-tickers">
+            <div className="list-tickers__header">
                 <span />
                 <span>€ invested</span>
-                <span>Nº tickets</span>
+                <span>Nº tickers</span>
                 <span>Current value €</span>
                 <span>Percent</span>
                 <span>Profits %</span>

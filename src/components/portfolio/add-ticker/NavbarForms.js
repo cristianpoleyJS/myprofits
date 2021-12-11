@@ -1,5 +1,5 @@
-import FormStock from 'components/portfolio/add-ticket/FormStock'
-import FormCrypto from 'components/portfolio/add-ticket/FormCrypto'
+import FormStock from 'components/portfolio/add-ticker/FormStock'
+import FormCrypto from 'components/portfolio/add-ticker/FormCrypto'
 import 'assets/styles/NavbarForms.css'
 import Button from 'components/common/Button'
 import Modal from 'components/common/Modal'

@@ -1,8 +1,8 @@
-import Ticket from 'components/portfolio/Ticket'
+import Ticker from 'components/portfolio/Ticker'
 
 const ListCryptos = ({ cryptos }) => {
     return (
-        cryptos.map(crypto => <Ticket ticket={crypto} key={crypto.id}/>)
+        cryptos.map(crypto => <Ticker ticker={crypto} key={crypto.id}/>)
     )
 }
 

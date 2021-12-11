@@ -6,7 +6,7 @@ const ListTotal = ({ stocks, cryptos }) => {
 
     return (
         <>
-            <div className="ticket">
+            <div className="ticker">
                 <span><strong>Total</strong></span>
                 <span>{totalMoneyInvested}</span>
                 <span />
