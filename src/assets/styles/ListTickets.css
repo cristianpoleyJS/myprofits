@@ -1,5 +1,35 @@
+.list-tickets div:nth-of-type(odd) {
+    background-color: var(--bg-odd-row);
+}
+.list-tickets div:nth-of-type(even) {
+    background-color: var(--bg-even-row);
+}
+
+.list-tickets div {
+    padding: 1rem 2rem;
+}
+
+.list-tickets div:first-child {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.list-tickets div:nth-last-child() {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
 .list-tickets__header,
 .ticket {
     display: grid;
-    grid-template-columns: 10% 15% 15% 15% 15% 15% 15%;
+    gap: 18px;
+    grid-template-columns: 5% 10% 10% 15% 10% 10% 15% 15%;
+    text-align: right;
+}
+.list-tickets > div > span:nth-of-type(1) {
+    text-align: left;
+    width: 40px;
+}
+
+.ticket {
+    font-weight: 300;
 }

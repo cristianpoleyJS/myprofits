@@ -1,3 +1,8 @@
-.portfolio__wrapper-form {
+.portfolio {
+    gap: 3rem;
+    justify-content: space-between;
+    width: 100%;
     display: flex;
+    padding: 1.5rem 5rem;
+    flex-direction: column;
 }

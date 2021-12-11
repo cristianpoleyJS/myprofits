@@ -1,20 +1,17 @@
 header {
-    display: grid;
-    grid-template-columns: 65% 35%;
+    padding: 2.25rem 3rem;
+    color: var(--white);
+    justify-content: space-between;
     align-items: center;
-    height: 60px;
-    margin-bottom: 4rem;
-    padding-top: 2rem;
-}
-
-.header-right {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
 }
 
-.header-right__logged {
+header a {
+    color: var(--main-text-color);
+    text-decoration: inherit;
+}
+
+header nav {
     display: flex;
     align-items: center;
     gap: 1rem;

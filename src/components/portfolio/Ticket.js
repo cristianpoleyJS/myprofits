@@ -9,7 +9,11 @@ const Ticket = ({ ticket }) => {
             <span>60000</span>
             <span>Porcentaje SC</span>
             <span>Ganancias %</span>
-            <span>Ganancias actuales</span>
+            <span>{ticket.profit}</span>
+            <span>
+                <button>Eliminar</button>
+                <button>Editar</button>
+            </span>
         </div>
     )
 }

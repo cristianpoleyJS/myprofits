@@ -8,8 +8,8 @@ import Login from 'components/auth/Login'
 const Header = ({ user, isLogged }) => {
     return (
         <header>
-            <span>MyProfits {isLogged}</span>
-            <div className="header-right">
+            <a href="/">MyProfits</a>
+            <nav>
                 {   
                     isLogged === null
                     ? <></>
@@ -19,13 +19,13 @@ const Header = ({ user, isLogged }) => {
                                 <Login />
                                 <Theme />
                             </>
-                        :   <div className="header-right__logged">
+                        :   <>
                                 <Logout />
                                 <Theme />
                                 <Avatar photo={user.photoUrl} height={'40px'} width={'40px'}/>
-                            </div>
+                            </>
                 }
-            </div>
+            </nav>
         </header>
     )
 }

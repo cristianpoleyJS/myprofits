@@ -4,13 +4,13 @@ import { connect } from 'react-redux'
 
 const Content = ({ isLogged }) => {
     return (
-        <div>
+        <>
             {
                 !isLogged
                 ? <Home />
                 : <Portfolio />
             }
-        </div>
+        </>
     )
 }
 
