@@ -15,20 +15,34 @@ const NavbarForms = ({ email }) => {
     const closeModalCrypto = () => {
         setOpenedCrypto(false)
     }
+    
+    const handleCreateStock = () => {
+        console.log('entro')
+    }
     return (
         <nav className="navbarforms">
-            <Modal isOpen={openedStock} close={closeModalStock} title="Create Stock">
-                <FormStock email={email} close={closeModalStock}/>
+            <Modal
+                isOpen={openedStock}
+                showButtonCreate={true}
+                create={handleCreateStock}
+                close={closeModalStock}
+                title="Create Stock">
+                    <FormStock email={email} close={closeModalStock}/>
             </Modal>
-            <Modal isOpen={openedCrypto} close={closeModalCrypto} title="Create Crypto">
-                <FormCrypto email={email} close={closeModalCrypto}/>
+            <Modal
+                isOpen={openedCrypto}
+                showButtonCreate={true}
+                create={handleCreateStock}
+                close={closeModalCrypto}
+                title="Create Crypto">
+                    <FormCrypto email={email} close={closeModalCrypto}/>
             </Modal>
             <div className="navbarforms__wrapper-buttons">
                 <Button onClick={() => setOpenedStock(true)}>
-                    Añadir Stock
+                    Add Stock
                 </Button>
                 <Button onClick={() => setOpenedCrypto(true)}>
-                    Añadir Crypto
+                    Add Crypto
                 </Button>
             </div>
         </nav>

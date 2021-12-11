@@ -1,7 +1,9 @@
 import 'assets/styles/Modal.css'
+import IconEquis from 'components/icons/IconEquis'
 import { createPortal } from 'react-dom'
+import Button from './Button'
 
-const Modal = ({ isOpen, close, title, children }) => {
+const Modal = ({ isOpen, close, create, showButtonCreate, title, children }) => {
     return isOpen
     ? createPortal(
         <>
@@ -10,14 +12,15 @@ const Modal = ({ isOpen, close, title, children }) => {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <div className="modal-title h4">{title}</div>
-                            <button type="button" className="btn-close"></button>
+                            <div className="modal-title">{title}</div>
+                            <IconEquis width={30} height={30} cursor="pointer" onClick={() => close()} />
                         </div>
                         <div className="modal-body">
                             {children}    
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" onClick={() => close()}>Close</button>
+                            <Button bgColor="transparent" onClick={() => close()}>Close</Button>
+                            { showButtonCreate && <Button onClick={() => create()}>Create</Button>}
                         </div>
                     </div>
                 </div>

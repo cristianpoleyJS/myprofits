@@ -3,23 +3,30 @@ import TextInput from 'components/common/TextInput'
 import { Crypto } from 'classes/Crypto'
 import { validateCommonFields, checkIsNumber } from './validations'
 import { addCrypto } from 'api'
+import { useDispatch } from 'react-redux'
+import { ADD_CRYPTO } from 'store/actions/portfolioActions'
+import 'assets/styles/Form.css'
 
 const validate = (values) => {
   let errors = {}
   errors = validateCommonFields({ errors, values })
 
   if(!values.numCoins || values.numCoins <= 0) {
-    errors.numCoins = 'Requerido'
+    errors.numCoins = '*'
   } else if (!checkIsNumber(values.numCoins)) {
-    errors.numCoins = 'Debe ser un número'
+    errors.numCoins = 'Must be a number'
   }
 
   return errors
 }
   
-const FormCrypto = ({ email, children }) => {
+const FormCrypto = ({ email }) => {
+  const dispatch = useDispatch()
+
   const handleSubmitCrypto = (values) => {
-    addCrypto({ crypto: values, userEmail: email })
+    const newCrypto = { crypto: values, userEmail: email }
+    addCrypto(newCrypto)
+    dispatch({ type: ADD_CRYPTO, payload: newCrypto })
   }
 
   const initialValues = new Crypto({ ticket: '', price: 0, moneyInvested: 0, numCoins: 0 })
@@ -29,7 +36,7 @@ const FormCrypto = ({ email, children }) => {
       validate={validate}
       onSubmit={values => handleSubmitCrypto(values)}>
       <Form>
-        <TextInput name="ticket" label="Crypto" />
+        <TextInput name="ticket" label="Crypto" placeholder="BTC" />
         <br />
         <TextInput name="price" label="Price" />
         <br />
@@ -38,10 +45,6 @@ const FormCrypto = ({ email, children }) => {
         <TextInput name="numCoins" label="Number of coins" />
         <br />
         <ErrorMessage name="radio" />
-        <div>
-          <button type="submit">Crear</button>
-          {children}
-        </div>
       </Form>
     </Formik>
   )

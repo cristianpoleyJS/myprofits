@@ -2,12 +2,10 @@ import { CURRENCY_EUR } from 'utils/constants'
 
 const SET_LANGAUGE = 'config/set_language'
 const SET_CURRENCY = 'config/set_currency'
-const SET_THEME = 'config/set_theme'
 
 const initialState = {
     language: navigator.language,
-    currency: CURRENCY_EUR,
-    theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    currency: CURRENCY_EUR
 }
 
 const reducers = {
@@ -17,10 +15,6 @@ const reducers = {
     },
     [`${SET_CURRENCY}`]: (state, { currency }) => {
       state.currency = currency
-      return state
-    },
-    [`${SET_THEME}`]: (state, { theme }) => {
-      state.theme = theme
       return state
     }
 }

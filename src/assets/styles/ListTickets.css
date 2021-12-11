@@ -1,3 +1,6 @@
+.list-tickets div {
+    padding: 1rem 2rem;
+}
 .list-tickets div:nth-of-type(odd) {
     background-color: var(--bg-odd-row);
 }
@@ -5,15 +8,11 @@
     background-color: var(--bg-even-row);
 }
 
-.list-tickets div {
-    padding: 1rem 2rem;
-}
-
 .list-tickets div:first-child {
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
-.list-tickets div:nth-last-child() {
+.list-tickets div:last-child {
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }
@@ -24,6 +23,7 @@
     gap: 18px;
     grid-template-columns: 5% 10% 10% 15% 10% 10% 15% 15%;
     text-align: right;
+    align-items: center;
 }
 .list-tickets > div > span:nth-of-type(1) {
     text-align: left;
@@ -32,4 +32,17 @@
 
 .ticket {
     font-weight: 300;
+}
+
+.ticket .positive {
+    color: #16c784;
+}
+.ticket .negative {
+    color: #ea3943;
+}
+
+.ticket .options {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
 }

@@ -8,6 +8,7 @@ const Button = styled.button`
     border-radius: 30px;
     cursor: pointer;
     text-transform: ${props => props.textTransform ?? 'capitalize'};
+    font-family: inherit;
 `
 
 export default Button

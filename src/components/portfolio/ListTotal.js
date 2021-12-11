@@ -4,11 +4,10 @@ const ListTotal = ({ stocks, cryptos }) => {
     const [totalMoneyInvested, setTotalMoneyInvested] = useState(0)
     const [totalProfits, setTotalProfits] = useState(0)
 
-    console.log(stocks)
     return (
         <>
             <div className="ticket">
-                <span>Total</span>
+                <span><strong>Total</strong></span>
                 <span>{totalMoneyInvested}</span>
                 <span />
                 <span />

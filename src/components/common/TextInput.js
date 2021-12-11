@@ -5,9 +5,8 @@ const TextInput = ({ label, ...props }) => {
 
   return (
     <div className="control">
-      <label className="label">{label}</label>
-      <input className="input" {...field} {...props}/>
-      {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+      <label className="label">{meta.touched && meta.error ? <span className="error">{meta.error}</span> : null} {label}</label>
+      <input className="input" {...field} {...props} autoComplete="off"/>
     </div>
   )
 }
