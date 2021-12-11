@@ -61,10 +61,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--main-bg-color);
   height: 100vh;
-  padding: 2rem 5rem;
+  padding: 0 5rem;
   color: var(--main-text-color);
 	line-height: 1;
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

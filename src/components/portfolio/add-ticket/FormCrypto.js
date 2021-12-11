@@ -17,7 +17,7 @@ const validate = (values) => {
   return errors
 }
   
-const FormCrypto = ({ email }) => {
+const FormCrypto = ({ email, children }) => {
   const handleSubmitCrypto = (values) => {
     addCrypto({ crypto: values, userEmail: email })
   }
@@ -38,7 +38,10 @@ const FormCrypto = ({ email }) => {
         <TextInput name="numCoins" label="Number of coins" />
         <br />
         <ErrorMessage name="radio" />
-        <button type="submit">Create Crypto</button>
+        <div>
+          <button type="submit">Crear</button>
+          {children}
+        </div>
       </Form>
     </Formik>
   )

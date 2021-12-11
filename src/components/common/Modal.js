@@ -1,20 +1,28 @@
-import styled from 'styled-components'
+import 'assets/styles/Modal.css'
 import { createPortal } from 'react-dom'
 
-const Div = styled.div`
-    background-color: #eee;
-    border-top: solid 2px palevioletred;
-    padding: 20px 25px;
-    width: 500px;
-    box-shadow: 0px 2px 3px rgb(0,0,0,0.3);
-`
-
-const Modal = ({ isOpen, children }) => {
+const Modal = ({ isOpen, close, title, children }) => {
     return isOpen
     ? createPortal(
-        <Div className="modal">
-            {children}
-        </Div>
+        <>
+            <div className="modal-backdrop"></div>
+            <div className="modal">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <div className="modal-title h4">{title}</div>
+                            <button type="button" className="btn-close"></button>
+                        </div>
+                        <div className="modal-body">
+                            {children}    
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-primary" onClick={() => close()}>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     , document.getElementById('modal-root'))
     : null
 }

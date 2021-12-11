@@ -1,8 +1,16 @@
+import 'assets/styles/ListTickets.css'
+
 const Ticket = ({ ticket }) => {
     return (
-        <li>
-            {JSON.stringify(ticket)}
-        </li>
+        <div className="ticket">
+            <span>{ticket.ticket}</span>
+            <span>{ticket.moneyInvested}</span>
+            <span>{ticket.numCoins || ticket.numStocks}</span>
+            <span>60000</span>
+            <span>Porcentaje SC</span>
+            <span>Ganancias %</span>
+            <span>Ganancias actuales</span>
+        </div>
     )
 }
 

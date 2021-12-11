@@ -2,6 +2,7 @@ import { onAuthStateChanged, LOGIN_SUCCESS, IS_LOGGED } from 'store/actions/auth
 import { useThemeMode } from 'hooks/useThemeMode'
 import Header from 'components/header/Header'
 import Content from 'components/layout/Content'
+import Loading from 'components/common/Loading'
 import Home from 'components/layout/Home'
 import { useDispatch, connect } from 'react-redux'
 import { useEffect } from 'react'
@@ -26,7 +27,7 @@ const AppLayout = ({ isLogged }) => {
         <Header />
         { 
           isLogged === null
-          ? <>loading</>
+          ? <Loading />
           :
               !isLogged
               ? <Home />

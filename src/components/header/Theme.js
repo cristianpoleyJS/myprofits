@@ -9,8 +9,8 @@ const Theme = () => {
     <>
       {
         theme === DARK
-        ? <IconLightMode onClick={() => setTheme(LIGHT)} width={'40px'} height={'40px'} fill={'#fff'}/>
-        : <IconDarkMode onClick={() => setTheme(DARK)} width={'40px'} height={'40px'} />
+        ? <IconLightMode onClick={() => setTheme(LIGHT)} width={'30px'} height={'30px'} fill={'#fff'}/>
+        : <IconDarkMode onClick={() => setTheme(DARK)} width={'30px'} height={'30px'} />
       }
     </>
   )

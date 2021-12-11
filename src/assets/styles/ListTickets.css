@@ -1,0 +1,5 @@
+.list-tickets__header,
+.ticket {
+    display: grid;
+    grid-template-columns: 10% 15% 15% 15% 15% 15% 15%;
+}

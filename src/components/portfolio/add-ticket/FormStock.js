@@ -17,7 +17,7 @@ const validate = (values) => {
   return errors
 }
   
-const FormStock = ({ email }) => {
+const FormStock = ({ email, children }) => {
   const handleSubmitStock = (values) => {
     addStock({ stock: values, userEmail: email })
   }
@@ -38,7 +38,10 @@ const FormStock = ({ email }) => {
         <TextInput name="numStocks" label="Number of stocks" />
         <br />
         <ErrorMessage name="radio" />
-        <button type="submit">Create Stock</button>
+        <div>
+          <button type="submit">Crear</button>
+          {children}
+        </div>
       </Form>
     </Formik>
   )
