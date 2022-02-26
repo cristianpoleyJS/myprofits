@@ -1,0 +1,24 @@
+footer {
+    padding: 1.5rem 3.5rem;
+    margin: 0 2rem;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+}
+
+footer nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+footer nav a {
+    color: inherit;
+    text-decoration: inherit;
+}
