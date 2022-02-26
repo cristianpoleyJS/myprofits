@@ -4,11 +4,12 @@ import Theme from 'components/header/Theme'
 import 'assets/styles/Header.css'
 import Logout from 'components/auth/Logout'
 import Login from 'components/auth/Login'
+import LogoApp from 'components/icons/LogoApp'
 
 const Header = ({ user, isLogged }) => {
     return (
         <header>
-            <a href="/">MyProfits</a>
+            <a className="anchor-icon" href="/"><LogoApp height={40}/></a>
             <nav>
                 {   
                     isLogged === null
@@ -16,7 +17,7 @@ const Header = ({ user, isLogged }) => {
                     :
                         !isLogged
                         ?   <>
-                                <Login />
+                                <Login text="Conéctate"/>
                                 <Theme />
                             </>
                         :   <>

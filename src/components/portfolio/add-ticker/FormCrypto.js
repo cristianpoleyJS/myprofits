@@ -35,10 +35,8 @@ const FormCrypto = ({ email }) => {
       initialValues={initialValues}
       validate={validate}
       onSubmit={values => handleSubmitCrypto(values)}>
-      <Form>
+      <Form id="form-crypto-id">
         <TextInput name="ticker" label="Crypto" placeholder="BTC" />
-        <br />
-        <TextInput name="price" label="Price" />
         <br />
         <TextInput name="moneyInvested" label="Money invested" />
         <br />

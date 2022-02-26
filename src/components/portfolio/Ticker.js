@@ -6,7 +6,7 @@ import IconRemove from 'components/icons/IconRemove'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteCrypto, deleteStock } from 'api'
 import { TYPE_CRYPTO } from 'utils/constants'
-import { transformToCurrency } from 'utils'
+import { formatCurrency, formatNumber } from 'utils'
 
 const Ticker = ({ ticker }) => {
     const email = useSelector(state => state.auth.user.email)
@@ -23,12 +23,11 @@ const Ticker = ({ ticker }) => {
     return (
         <div className="ticker">
             <span>{ticker.ticker}</span>
-            <span>{transformToCurrency(ticker.moneyInvested)}</span>
-            <span>{ticker.numCoins || ticker.numStocks}</span>
-            <span>{transformToCurrency(60000)}</span>
-            <span>{50}%</span>
-            <span>+{0}%</span>
-            <span className={`profits ${ticker.profits > 0 ? 'positive' : 'negative'}`}>{transformToCurrency(0)}</span>
+            <span>{formatCurrency(ticker.moneyInvested)}</span>
+            <span>{formatNumber(ticker.numCoins || ticker.numStocks)}</span>
+            <span>{formatCurrency(ticker.price)}</span>
+            <span className={`profits ${ticker.profits > 0 ? 'positive' : 'negative'}`}>{(ticker.profitsPercent*100).toFixed(2)}%</span>
+            <span className={`profits ${ticker.profits > 0 ? 'positive' : 'negative'}`}>{formatCurrency(ticker.profits)}</span>
             <span className="options">
                 <Button padding="10px" onClick={() => handleRemoveTicker(ticker)}><IconRemove width={20} height={20} display="block"/></Button>
                 <Button padding="10px"><IconEdit width={20} height={20} display="block"/></Button>

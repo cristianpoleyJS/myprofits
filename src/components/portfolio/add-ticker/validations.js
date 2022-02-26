@@ -4,12 +4,6 @@ export const validateCommonFields = ({ errors, values }) => {
       errors.ticker = ''
     }
   
-    if(!values.price || values.price <= 0) {
-      errors.price = ''
-    } else if (!checkIsNumber(values.price)) {
-      errors.price = 'Must be a number'
-    }
-
     if(!values.moneyInvested || values.moneyInvested <= 0) {
       errors.moneyInvested = ''
     } else if (!checkIsNumber(values.moneyInvested)) {

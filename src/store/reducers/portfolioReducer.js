@@ -38,7 +38,7 @@ const reducers = {
         }
     },
     [`${EDIT_CRYPTO}`]: (state, { id, data }) => {
-        const foundCrypto = state.cryptos.find(s => s.id === id)
+        let foundCrypto = state.cryptos.find(s => s.id === id)
         // eslint-disable-next-line
         foundCrypto = {
             ...data

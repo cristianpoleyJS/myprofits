@@ -1,8 +1,8 @@
+import 'assets/styles/Loading.css'
+
 const Loading = () => {
     return (
-        <span>
-            loading
-        </span>
+        <span></span>
     )
 }
 

@@ -16,24 +16,21 @@ const NavbarForms = ({ email }) => {
         setOpenedCrypto(false)
     }
     
-    const handleCreateStock = () => {
-        console.log('entro')
-    }
     return (
         <nav className="navbarforms">
             <Modal
                 isOpen={openedStock}
                 showButtonCreate={true}
-                create={handleCreateStock}
                 close={closeModalStock}
+                formId="form-stock-id"
                 title="Create Stock">
                     <FormStock email={email} close={closeModalStock}/>
             </Modal>
             <Modal
                 isOpen={openedCrypto}
                 showButtonCreate={true}
-                create={handleCreateStock}
                 close={closeModalCrypto}
+                formId="form-crypto-id"
                 title="Create Crypto">
                     <FormCrypto email={email} close={closeModalCrypto}/>
             </Modal>

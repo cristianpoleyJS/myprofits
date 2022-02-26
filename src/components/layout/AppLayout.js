@@ -4,13 +4,14 @@ import Header from 'components/header/Header'
 import Footer from 'components/layout/Footer'
 import Content from 'components/layout/Content'
 import Loading from 'components/common/Loading'
+import AppParticles from 'components/layout/AppParticles'
 import Home from 'components/layout/Home'
 import { useDispatch, connect } from 'react-redux'
 import 'assets/styles/AppLayout.css'
 import { useEffect } from 'react'
 
 const AppLayout = ({ isLogged }) => {
-    useThemeMode()
+    const [themeMode] = useThemeMode()
     const dispatch = useDispatch()
     
     useEffect(() => {
@@ -23,11 +24,11 @@ const AppLayout = ({ isLogged }) => {
             dispatch({ type: IS_LOGGED, payload: false })
           })
     }, [dispatch])
-  
+    
     return (
       <>
-        <Header />
         <main>
+          <Header />
           { 
             isLogged === null
             ? <Loading />
@@ -36,8 +37,9 @@ const AppLayout = ({ isLogged }) => {
                 ? <Home />
                 : <Content />
           }
+          <Footer />
         </main>
-        <Footer />
+        <AppParticles color={themeMode} />
       </>
     )
 }

@@ -3,7 +3,7 @@ import IconEquis from 'components/icons/IconEquis'
 import { createPortal } from 'react-dom'
 import Button from './Button'
 
-const Modal = ({ isOpen, close, create, showButtonCreate, title, children }) => {
+const Modal = ({ isOpen, close, showButtonCreate, title, children, formId }) => {
     return isOpen
     ? createPortal(
         <>
@@ -20,7 +20,7 @@ const Modal = ({ isOpen, close, create, showButtonCreate, title, children }) => 
                         </div>
                         <div className="modal-footer">
                             <Button bgColor="transparent" onClick={() => close()}>Close</Button>
-                            { showButtonCreate && <Button onClick={() => create()}>Create</Button>}
+                            { showButtonCreate && <Button type="submit" form={formId}>Create</Button> }
                         </div>
                     </div>
                 </div>

@@ -53,7 +53,7 @@ export const getCrypto = async (coin) => {
 }
 
 export const getStock = async (symbol) => {
-    const { investing } = require('investing-com-api');
-    const res = await investing(symbol)
-    console.log(res)
+    const API_KEY = process.env.NEXT_PUBLIC_API_KEY_ALPHAVANTAGE
+    const res = await fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`)
+    return res.json()
 }

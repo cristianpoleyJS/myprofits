@@ -1,14 +1,19 @@
 header {
-    padding: 2.25rem 3rem;
     color: var(--white);
     justify-content: space-between;
     align-items: center;
     display: flex;
+    padding: 1.5rem 3.5rem;
+    margin: 0rem 3rem 0;
 }
 
 header a {
     color: var(--main-text-color);
     text-decoration: inherit;
+}
+
+header a.anchor-icon {
+    margin-top: 10px;
 }
 
 header nav {

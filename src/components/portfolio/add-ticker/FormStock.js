@@ -35,10 +35,8 @@ const FormStock = ({ email }) => {
       initialValues={initialValues}
       validate={validate}
       onSubmit={values => handleSubmitStock(values)}>
-      <Form>
+      <Form id="form-stock-id">
         <TextInput name="ticker" label="Stock" placeholder="BABA" />
-        <br />
-        <TextInput name="price" label="Price" />
         <br />
         <TextInput name="moneyInvested" label="Money invested" />
         <br />
