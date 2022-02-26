@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 TODO:
-// Guardar la lista de tickets de la base de datos
+// Guardar la lista de tickers de la base de datos
 // Guardar mi configuración de idioma
 // Guardar mi configuración de tema
 // Guardar usuario

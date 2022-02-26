@@ -13,13 +13,15 @@ export const mapUserFromFirebase = (user) => {
     }
 }
 
-export const onAuthStateChanged = (onChange) => {
+export const onAuthStateChanged = (callbackAuthenticated, callbackNotAuthenticated) => {
     return firebase
             .auth()
             .onAuthStateChanged(user => {
                 if (user) {
                     const normalizedUser = mapUserFromFirebase(user)
-                    onChange(normalizedUser)
+                    callbackAuthenticated(normalizedUser)
+                } else {
+                    callbackNotAuthenticated()
                 }
             })
 }

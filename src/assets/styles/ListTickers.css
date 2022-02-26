@@ -1,0 +1,48 @@
+.list-tickers div {
+    padding: 1rem 2rem;
+}
+.list-tickers div:nth-of-type(odd) {
+    background-color: var(--bg-odd-row);
+}
+.list-tickers div:nth-of-type(even) {
+    background-color: var(--bg-even-row);
+}
+
+.list-tickers div:first-child {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.list-tickers div:last-child {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.list-tickers__header,
+.ticker {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 5% 10% 15% 15% 15% 15% 15%;
+    text-align: right;
+    align-items: center;
+}
+.list-tickers > div > span:nth-of-type(1) {
+    text-align: left;
+    width: 40px;
+}
+
+.ticker {
+    font-weight: 300;
+}
+
+.ticker .positive {
+    color: #16c784;
+}
+.ticker .negative {
+    color: #ea3943;
+}
+
+.ticker .options {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+}

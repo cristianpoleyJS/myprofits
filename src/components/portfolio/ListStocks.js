@@ -1,13 +1,8 @@
-import Ticket from 'components/portfolio/Ticket'
+import Ticker from 'components/portfolio/Ticker'
 
 const ListStocks = ({ stocks }) => {
-    console.log(stocks)
     return (
-        <ul>
-            {stocks.map(stock => 
-                <Ticket ticket={stock} key={stock.id}/>
-            )}
-        </ul>
+        stocks.map(stock => <Ticker ticker={stock} key={stock.id}/>)
     )
 }
 

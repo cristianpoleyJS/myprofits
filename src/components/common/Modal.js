@@ -1,20 +1,31 @@
-import styled from 'styled-components'
+import 'assets/styles/Modal.css'
+import IconEquis from 'components/icons/IconEquis'
 import { createPortal } from 'react-dom'
+import Button from './Button'
 
-const Div = styled.div`
-    background-color: #eee;
-    border-top: solid 2px palevioletred;
-    padding: 20px 25px;
-    width: 500px;
-    box-shadow: 0px 2px 3px rgb(0,0,0,0.3);
-`
-
-const Modal = ({ isOpen, children }) => {
+const Modal = ({ isOpen, close, showButtonCreate, title, children, formId }) => {
     return isOpen
     ? createPortal(
-        <Div className="modal">
-            {children}
-        </Div>
+        <>
+            <div className="modal-backdrop"></div>
+            <div className="modal">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <div className="modal-title">{title}</div>
+                            <IconEquis width={30} height={30} cursor="pointer" onClick={() => close()} />
+                        </div>
+                        <div className="modal-body">
+                            {children}    
+                        </div>
+                        <div className="modal-footer">
+                            <Button bgColor="transparent" onClick={() => close()}>Close</Button>
+                            { showButtonCreate && <Button type="submit" form={formId}>Create</Button> }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     , document.getElementById('modal-root'))
     : null
 }

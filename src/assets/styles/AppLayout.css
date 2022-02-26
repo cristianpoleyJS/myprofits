@@ -1,0 +1,6 @@
+main {
+    flex-direction: column;
+    flex: 1 1 0%;
+    display: flex;
+    z-index: 2;
+}

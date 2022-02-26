@@ -1,4 +1,4 @@
-import { ADD_CRYPTO, ADD_STOCK, EDIT_STOCK, REMOVE_STOCK } from 'store/actions/portfolioActions'
+import { ADD_CRYPTO, EDIT_CRYPTO, REMOVE_CRYPTO, ADD_STOCK, EDIT_STOCK, REMOVE_STOCK, CLEAN_PORTFOLIO } from 'store/actions/portfolioActions'
 
 const initialState = {
     stocks: [],
@@ -23,12 +23,40 @@ const reducers = {
         }
     },
     [`${EDIT_STOCK}`]: (state, { id, data }) => {
-        // state.portfolio.set(id, data)
+        let foundStock = state.stocks.find(c => c.id === id)
+        // eslint-disable-next-line
+        foundStock = {
+            ...data
+        }
         return state
     },
     [`${REMOVE_STOCK}`]: (state, { id }) => {
-        // state.portfolio.delete(id)
+        const newStocks = state.stocks.filter(c => c.id !== id)
+        return {
+            ...state,
+            stocks: [...newStocks]
+        }
+    },
+    [`${EDIT_CRYPTO}`]: (state, { id, data }) => {
+        let foundCrypto = state.cryptos.find(s => s.id === id)
+        // eslint-disable-next-line
+        foundCrypto = {
+            ...data
+        }
         return state
+    },
+    [`${REMOVE_CRYPTO}`]: (state, { id }) => {
+        const newCryptos = state.cryptos.filter(s => s.id !== id)
+        return {
+            ...state,
+            cryptos: [...newCryptos]
+        }
+    },
+    [`${CLEAN_PORTFOLIO}`]: () => {
+        return {
+            stocks: [],
+            cryptos: []
+        }
     }
 }
 
